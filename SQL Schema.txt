@@ -1,0 +1,45 @@
+SQL Schema for Car Rental Application:
+
+Table: car_types
+Columns:
+id - bigint AI PK 
+name - varchar(255) 
+tax_rate - decimal(38,2)
+
+
+
+Table: cars
+Columns:
+id - bigint AI PK 
+cost_per_kilometer - decimal(38,2) 
+img - longblob 
+make - varchar(255) 
+model - varchar(255) 
+odometer_reading - int 
+year - int 
+cartype_id - bigint
+
+
+Table: rentals
+Columns:
+id - bigint AI PK 
+end_date - date 
+end_odometer_reading - int 
+rental_cost - decimal(38,2) 
+rental_status - enum('APPROVED','CANCELED','COMPLETED','CREATED','REJECTED') 
+start_date - date 
+start_odometer_reading - int 
+total_distance - int 
+car_id - bigint 
+user_id - bigint
+
+
+
+Table: users
+Columns:
+id - bigint AI PK 
+email - varchar(255) 
+password - varchar(255) 
+role - enum('ADMIN','USER') 
+royalty_points - int 
+username - varchar(255)
